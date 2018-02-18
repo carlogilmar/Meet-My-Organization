@@ -1,0 +1,29 @@
+<section id="about">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 mx-auto text-center">
+        <img src="https://user-images.githubusercontent.com/1790822/28984617-e789fa78-792c-11e7-9c9f-17c23a70e6cc.png" width="50%">
+				<h2>GCE Training Module 12: Meet my community!</h2>
+				<p class="lead"> This is a simple App. Write your community github user, and meet this community through repositories and projects in Github.</p>
+			</div>
+		</div>
+	</div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+      </div>
+      <div class="col">
+        <div class="input-group">
+          {{input value=username type="text" class="form-control" placeholder="Community Github Account"}}
+          <span class="input-group-btn">
+            <button class="btn btn-secondary" type="button" {{action 'meetCommunity' username}} >Meet!</button>
+          </span>
+        </div>
+        <br><br>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+  </div>
+</section>
