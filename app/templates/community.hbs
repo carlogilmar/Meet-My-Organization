@@ -1,0 +1,55 @@
+<section id="community">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 mx-auto">
+
+        {{#if (eq model.type "User")}}
+          <div class="text-center">
+          <img src="https://octodex.github.com/images/octocat-de-los-muertos.jpg" width="30%"/>
+          <h1>{{model.name}}</h1>
+          <p class="lead"><strong>Oops! You are a Github User</strong></p>
+          <br>{{#link-to 'application' class="btn btn-primary btn-block"}} Back! {{/link-to}}
+          </div>
+
+          {{#bs-modal-simple open=true title="Enter a valid Github Organization" size="sm" onHidden=(action (mut modal1) false)}}
+            <div class="text-center">
+              You has been write a Github User Account. Please find a valid Github Organization<br>
+              <br><img src="https://dwa5x7aod66zk.cloudfront.net/assets/next/campus-experts/ce-flag-59b436097e6168e12b543fec9e936037ff777d1c0160fa4b07cd7394d8779418.png" width="40%"/>
+            </div>
+          {{/bs-modal-simple}}
+
+        {{/if}}
+
+        {{#if (eq model.type "Organization")}}
+          <div class="text-center">
+          <img src="https://dwa5x7aod66zk.cloudfront.net/assets/next/campus-experts/ce-flag-59b436097e6168e12b543fec9e936037ff777d1c0160fa4b07cd7394d8779418.png" width="20%"/>
+          <h1>{{model.name}}</h1>
+          <p class="lead">{{model.type}}</p>
+          <br>
+
+          <ul class="list-group">
+            <li class="list-group-item">
+              <i class="fab fa-github-alt"></i> &nbsp; <strong>{{model.name}}</strong>
+            </li>
+            <li class="list-group-item">
+              <i class="fas fa-briefcase"></i> &nbsp; <strong>{{model.public_repos}} Public Repositories</strong>
+            </li>
+            {{#if model.blog}}
+            <li class="list-group-item">
+              <i class="fab fa-chrome"></i> &nbsp; <a href="{{model.blog}}"> {{model.blog}} </a>
+            </li>
+            {{/if}}
+            {{#if model.location}}
+            <li class="list-group-item">
+              <i class="fas fa-location-arrow"></i> &nbsp; <strong>{{model.location}}</strong>
+            </li>
+            {{/if}}
+          </ul>
+          </div>
+
+        {{/if}}
+
+			</div>
+		</div>
+	</div>
+</section>

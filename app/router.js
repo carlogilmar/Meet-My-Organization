@@ -7,6 +7,7 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('community', {path:':username'}, function(){});
 });
 
 export default Router;

@@ -6,6 +6,7 @@ export default Route.extend({
       if(username){
         this.get('controller').set('username', "");
         this.toast.info('Finding your community: '+username);
+        this.transitionTo('community', username);
       }
       else{
         this.toast.warning('Community Empty');
